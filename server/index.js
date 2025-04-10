@@ -1,20 +1,19 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
-// const dotenv = require("dotenv");
+require("dotenv").config();
 const express = require("express");
 const mysql = require("mysql2");
 
 const app = express();
-// dotenv.config();
 const hostname = "127.0.0.1";
 const PORT = process.env.PORT || 3001;
 
-// const db = mysql.createConnection({
-//     host: "http://localhost",
-//     user: "root",
-//     password: "",
-//     database: ""
-// });
+const db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
