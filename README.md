@@ -35,5 +35,6 @@ library, and delete books from their library.
 ### Snippets
 
 - [CSS Font Stack](https://www.cssfontstack.com/)
+- [NodejS .gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
 
 ## References
