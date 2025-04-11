@@ -1,3 +1,5 @@
+import "./Form.css"
+
 import { useState } from 'react';
 
 function Form() {
@@ -15,23 +17,23 @@ function Form() {
 
     return (
         <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
-            <label htmlFor="isbn">ISBN</label>
-            <input type="text" name="isbn" />
+            <label htmlFor="form-isbn">ISBN</label>
+            <input type="text" name="form-isbn" id="form-isbn" />
 
-            <label htmlFor="title">Title</label>
-            <input type="text" name="title" />
+            <label htmlFor="form-title">Title</label>
+            <input type="text" name="form-title" id="form-title" />
 
-            <label htmlFor="author">Author</label>
-            <input type="text" name="author" />
+            <label htmlFor="form-author">Author</label>
+            <input type="text" name="form-author" id="form-author" />
 
-            <label htmlFor="release_year">Release Year</label>
-            <input type="text" name="release_year" />
+            <label htmlFor="form-release-year">Release Year</label>
+            <input type="text" name="form-release-year" id="form-release-year" />
 
-            <label htmlFor="cover_url">Cover URL</label>
-            <input type="text" name="cover_url" />
+            <label htmlFor="form-cover-url">Cover URL</label>
+            <input type="text" name="form-cover-url" id="form-cover-url" />
 
-            <label htmlFor="total_pages">Total Pages</label>
-            <input type="text" name="total_pages" />
+            <label htmlFor="form-total-pages">Total Pages</label>
+            <input type="text" name="form-total-pages" id="form-total-pages" />
 
             <input type="submit" value="Add book" />
         </form>

@@ -1,0 +1,36 @@
+#book-form {
+    margin: 0 auto;
+}
+
+#book-form > label {
+    display: block;
+
+    font-size: 2em;
+}
+
+#book-form > input[type="text"] {
+    margin: 20px 0;
+    width: 400px;
+    height: 40px;
+
+    font-size: 1.5em;
+}
+
+#book-form > input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 200px;
+    height: 40px;
+
+    background-color: #4682b4;
+    color: white;
+
+    font-size: 1.3em;
+}
+
+#book-form > input[type="submit"]:active {
+    background-color: darkcyan;
+}
