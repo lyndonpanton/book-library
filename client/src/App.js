@@ -1,4 +1,5 @@
 import './App.css';
+import Header from './Header';
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -19,9 +20,7 @@ function App() {
     // Update state variables
     return (
         <div className="App">
-            <header>
-                <h1>Book Library</h1>
-            </header>
+            <Header />
             <main>
                 <form id="book-form" onSubmit={ submitNewBook }>
                     <label></label>
