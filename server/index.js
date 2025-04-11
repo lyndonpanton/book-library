@@ -53,7 +53,13 @@ app.post("/api/insert", function (req, res) {
 });
 
 app.get("/api/select", function (req, res) {
+    const sqlSelect = "SELECT * FROM book_library;";
 
+    db.query(sqlSelect, function(err, result) {
+        if (err) throw err;
+
+        res.send(result);
+    });
 });
 
 app.put("/api/update", function (req, res) {

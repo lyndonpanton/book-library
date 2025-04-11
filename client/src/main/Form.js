@@ -1,7 +1,7 @@
 import "./Form.css"
 import axios from "axios";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Form() {
     // New book: isbn, title, author, release_year, cover_url, total_pages
@@ -11,6 +11,16 @@ function Form() {
     const [newReleaseYear, setNewReleaseYear] = useState("");
     const [newCoverURL, setNewCoverURL] = useState("");
     const [newTotalPages, setNewTotalPages] = useState("");
+
+    // Move to <Library />
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/api/select").then(function (response) {
+            console.log(response.data);
+            setBooks(response.data);
+        });
+    }, []);
 
     function submitNewBook(e) {
         e.preventDefault();
@@ -150,6 +160,27 @@ function Form() {
                     onChange={ (e) => setNewTotalPages(e.target.value) } />
 
             <input type="submit" value="Add book" />
+
+            {
+                books.map(function (book, index) {
+                    { console.log(book.isbn); }
+                    { console.log(book.title); }
+                    { console.log(book.author); }
+                    { console.log(book.release_year); }
+                    { console.log(book.cover_url); }
+                    { console.log(book.total_pages); }
+                    return (
+                        <div key={index}>
+                            <h3>{ book.title }</h3>
+                            <img src={ book.cover_url } alt="Book cover" />
+                            <p>{ book.author }</p>
+                            <p>{ book.isbn }</p>
+                            <p>{ book.release_year }</p>
+                            <p>{ book.total_pages }</p>
+                        </div>
+                    );
+                })
+            }
         </form>
     );
 }
