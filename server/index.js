@@ -20,27 +20,32 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", function (req, res) {
-    const sqlInsert = 
-        "INSERT INTO book_library (isbn, title, author, release_year, cover_url, total_pages) VALUES ("
-            + "9780765318411, "
-            + "'Boneshaker', "
-            + "'Cherie Priest', "
-            + "2009, "
-            + "'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1433161048i/1137215.jpg', "
-            + "416"
-        + ");";
-    
-    db.query(sqlInsert, function (err, result) {
-        if (err) throw err;
-
-        console.log("New book added");
-    })
-
     res.send("Homepage");
 });
 
 app.post("/api/insert", function (req, res) {
+    const sqlInsert = 
+        "INSERT INTO book_library (isbn, title, author, release_year, cover_url, total_pages) VALUES ("
+            + "?, "
+            + "'?', "
+            + "'?', "
+            + "?, "
+            + "'?', "
+            + "?"
+        + ");";
+    
+    db.query(sqlInsert, [
 
+
+
+
+
+        
+        ], function (err, result) {
+            if (err) throw err;
+
+            console.log("New book added");
+    });
 });
 
 app.get("/api/select", function (req, res) {
