@@ -5,12 +5,15 @@ function Library() {
 
     return (
         <section id="book-library">
-            s;dklfj;dslk;
-        {
-            books.map(function (book, index) {
+            <h2>Your Books</h2>
+            
+            <article id="books">
+                {
+                    books.map(function (book, index) {
 
-            })
-        }
+                    })
+                }
+            </article>
         </section>
     );
 }
