@@ -24,6 +24,15 @@ app.get("/", function (req, res) {
 });
 
 app.post("/api/insert", function (req, res) {
+    const isbn = req.body.isbn;
+    const title = req.body.title;
+    const author = req.body.author;
+    const release_year = req.body.release_year;
+    const cover_url = req.body.cover_url;
+    const total_pages = req.body.total_pages;
+
+    // current_page, is_complete...
+    
     const sqlInsert = 
         "INSERT INTO book_library (isbn, title, author, release_year, cover_url, total_pages) VALUES ("
             + "?, "
