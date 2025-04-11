@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#book-form {
+    width: 35%;
+}
+
+#book-library {
+    width: 65%;
+}

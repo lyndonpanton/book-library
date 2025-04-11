@@ -1,3 +1,5 @@
+import "./Main.css";
+
 import Form from "./Form";
 import Library from "./Library";
 
