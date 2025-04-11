@@ -27,24 +27,24 @@ app.post("/api/insert", function (req, res) {
     const isbn = req.body.isbn;
     const title = req.body.title;
     const author = req.body.author;
-    const releaseYear = req.body.release_year;
-    const coverUrl = req.body.cover_url;
-    const totalPages = req.body.total_pages;
+    const releaseYear = req.body.releaseYear;
+    const coverURL = req.body.coverURL;
+    const totalPages = req.body.totalPages;
 
     // current_page, is_complete...
 
     const sqlInsert = 
         "INSERT INTO book_library (isbn, title, author, release_year, cover_url, total_pages) VALUES ("
             + "?, "
-            + "'?', "
-            + "'?', "
             + "?, "
-            + "'?', "
+            + "?, "
+            + "?, "
+            + "?, "
             + "?"
         + ");";
     
     db.query(sqlInsert, [
-            isbn, title, author, releaseYear, coverUrl, totalPages
+            isbn, title, author, releaseYear, coverURL, totalPages
         ], function (err, result) {
             if (err) throw err;
 

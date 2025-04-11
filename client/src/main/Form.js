@@ -1,4 +1,5 @@
 import "./Form.css"
+import axios from "axios";
 
 import { useState } from 'react';
 
@@ -14,6 +15,8 @@ function Form() {
     function submitNewBook(e) {
         e.preventDefault();
 
+        // Strip whitespace from back and end each input
+
         let validISBN = false;
         let validTitle = false;
         let validAuthor = false;
@@ -22,7 +25,7 @@ function Form() {
         let validTotalPages = false;
 
         // Validation (see database schema, isEmpty and isFormattedCorrectly)...
-        if (newISBN.length == 13) {
+        if (newISBN.length === 13) {
             validISBN = true;
         }
 
@@ -34,16 +37,18 @@ function Form() {
             validAuthor = true;
         }
 
-        if (newReleaseYear.length == 4 && !isNaN(newReleaseYear)) {
-
+        if (newReleaseYear.length === 4 && !isNaN(newReleaseYear)) {
+            validReleaseYear = true;
         }
 
         // Valid URL as well as length...
         if (newCoverURL.length > 0) {
+            // Make a request to the open library API and see if a valid
+            // response if returned
             validCoverURL = true;
         }
 
-        if (newTotalPages.length > 5) {
+        if (!isNaN(newTotalPages) && parseInt(newTotalPages) > 4) {
             validTotalPages = true;
         }
         
@@ -55,14 +60,14 @@ function Form() {
                 validISBN && validTitle && validAuthor && validReleaseYear
                 && validCoverURL && validTotalPages
         ) {
-            // axios.post("http://localhost:3001/api/insert", {
-            //         isbn: newISBN,
-            //         title: newTitle,
-            //         author: newAuthor,
-            //         release_year: newReleaseYear,
-            //         coverURL: newCoverURL,
-            //         totalPages: newTotalPages
-            // });
+            axios.post("http://localhost:3001/api/insert", {
+                    isbn: newISBN,
+                    title: newTitle,
+                    author: newAuthor,
+                    releaseYear: newReleaseYear,
+                    coverURL: newCoverURL,
+                    totalPages: newTotalPages
+            });
 
             // Update UI
 
@@ -75,22 +80,19 @@ function Form() {
             setNewTotalPages("");
         } else {
             if (!validISBN) {
-                console.log(
-                    "ISBN must be 13 digits long and only contain numbers"
-                );
+                console.log("ISBN must a 13 digits number");
             }
 
             if (!validTitle) {
-                console.log("Invalid book title");
+                console.log("Title must contain at least 1 character");
             }
 
             if (!validAuthor) {
-                console.log("Invalid book author");
-
+                console.log("Author name must be at least 3 characters long");
             }
 
             if (!validReleaseYear) {
-                console.log("Invalid book release year");
+                console.log("Release year must be a 4-digit number");
             }
 
             if (!validCoverURL) {
@@ -98,7 +100,7 @@ function Form() {
             }
 
             if (!validTotalPages) {
-                console.log("Invalid book total pages");
+                console.log("Book must contain at least 5 pages");
             }
         }
     }
