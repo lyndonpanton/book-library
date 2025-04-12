@@ -65,8 +65,12 @@ function Form({ setBooks }) {
 
         if (
                 validISBN && validTitle && validAuthor && validReleaseYear
-                && validCoverURL && validTotalPages
+                && validTotalPages
         ) {
+            if (!validCoverURL) {
+                setNewCoverURL("https://unsplash.com/photos/a-blue-book-with-gold-speckles-on-it-iB9YTvq2rZ8");
+            }
+
             axios.post("http://localhost:3001/api/insert", {
                     isbn: newISBN,
                     title: newTitle,

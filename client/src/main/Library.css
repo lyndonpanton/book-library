@@ -1,0 +1,37 @@
+.book {
+
+}
+
+.book-author {
+
+}
+
+.book-cover {
+    width: 200px;
+    height: 300px;
+}
+
+.book-isbn {
+
+}
+
+.book-release-year {
+
+}
+
+.book-title {
+
+}
+
+.book-total-pages {
+
+}
+
+#books {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#book-library {
+
+}

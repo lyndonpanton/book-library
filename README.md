@@ -35,7 +35,11 @@ library, and delete books from their library.
 ### Snippets
 
 - [CSS Font Stack](https://www.cssfontstack.com/)
-- [NodejS .gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
+- [NodejS .gitignore | GitHub](https://github.com/github/gitignore/blob/main/Node.gitignore)
 - [Sharing State Between Components | React.dev](https://react.dev/learn/sharing-state-between-components)
+
+### Content
+
+- [Default Book Cover | Heather Green @ Unsplash](https://unsplash.com/photos/a-blue-book-with-gold-speckles-on-it-iB9YTvq2rZ8)
 
 ## References
