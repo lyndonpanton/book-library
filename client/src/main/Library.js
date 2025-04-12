@@ -11,14 +11,14 @@ function Library({ books }) {
                 {
                     books.map(function (book, index) {
                         return (
-                            <div key={index} class="book">
-                                <h3 class="book-title">{ book.title }</h3>
+                            <div key={index} className="book">
+                                <h3 className="book-title">{ book.title }</h3>
                                 {/* Give covers a specific size */}
-                                <p class="book-author">{ book.author }</p>
-                                <img class="book-cover" src={ book.cover_url } alt="Book cover" />
-                                <p class="book-isbn">ISBN: { book.isbn }</p>
-                                <p class="book-release-year">Release Year: { book.release_year }</p>
-                                <p class="book-total-pages">Pages: { book.total_pages }</p>
+                                <p className="book-author">{ book.author }</p>
+                                <img className="book-cover" src={ book.cover_url } alt="Book cover" />
+                                <p className="book-isbn">ISBN: { book.isbn }</p>
+                                <p className="book-release-year">Release Year: { book.release_year }</p>
+                                <p className="book-total-pages">Pages: { book.total_pages }</p>
                             </div>
                         );
                     })

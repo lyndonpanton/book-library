@@ -1,3 +1,5 @@
+
+
 function Footer() {
     const currentYear = new Date().getFullYear();
     return (
@@ -20,11 +22,12 @@ function Footer() {
                     <li className="footer-main-link">MySQL</li>
                 </ul>
                 <ul className="footer-main-link-list">
-                    {/* Packages */}
+                    {/* Packages and Libraries */}
                     <li className="footer-main-link">axios</li>
                     <li className="footer-main-link">body-parser</li>
                     <li className="footer-main-link">cors</li>
                     <li className="footer-main-link">dotenv</li>
+                    <li className="footer-main-link">Fontawesome</li>
                     <li className="footer-main-link">express</li>
                     <li className="footer-main-link">mysql2</li>
                 </ul>
@@ -39,13 +42,13 @@ function Footer() {
             <section id="footer-sub-links">
                 <section id="footer-sub-links-left">
                     <span>Privacy Policy</span>
-                    <span>Privacy Policy</span>
-                    <span>Privacy Policy</span>
+                    <span>Terms and Conditions</span>
+                    <span>Cookies</span>
                 </section>
                 <section id="footer-sub-links-right">
-                    <span>Privacy Policy</span>
-                    <span>Privacy Policy</span>
-                    <span>Privacy Policy</span>
+                    <span>Twitter: <i className="fa-brands fa-twitter"></i></span>
+                    <span>Facebook: <i className="fa-brands fa-facebook"></i></span>
+                    <span>Instagram: <i className="fa-brands fa-instagram"></i></span>
                 </section>
             </section>
             <p id="footer-copyright">
