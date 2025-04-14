@@ -40,15 +40,15 @@ function Footer() {
                 </ul>
             </section>
             <section id="footer-sub-links">
-                <section id="footer-sub-links-left">
-                    <span>Privacy Policy</span>
-                    <span>Terms and Conditions</span>
-                    <span>Cookies</span>
+                <section>
+                    <span className="footer-sub-link">Privacy Policy</span>
+                    <span className="footer-sub-link">Terms and Conditions</span>
+                    <span className="footer-sub-link">Cookies</span>
                 </section>
-                <section id="footer-sub-links-right">
-                    <span>Twitter: <i className="fa-brands fa-twitter"></i></span>
-                    <span>Facebook: <i className="fa-brands fa-facebook"></i></span>
-                    <span>Instagram: <i className="fa-brands fa-instagram"></i></span>
+                <section>
+                    <span className="footer-sub-link">Twitter: <i className="fa-brands fa-twitter"></i></span>
+                    <span className="footer-sub-link">Facebook: <i className="fa-brands fa-facebook"></i></span>
+                    <span className="footer-sub-link">Instagram: <i className="fa-brands fa-instagram"></i></span>
                 </section>
             </section>
             <p id="footer-copyright">
