@@ -9,10 +9,10 @@ function App() {
     return (
         <div className="App">
             {/* { console.log("Token: " + faKitToken) } */}
-            <script
+            {/* <script
                     src={"https://https://kit.fontawesome.com/" + faKitToken + ".js"}
                     crossOrigin="anonymous">
-            </script>
+            </script> */}
             <Header />
             <Main />
             <Footer />
