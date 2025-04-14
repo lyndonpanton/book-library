@@ -13,7 +13,6 @@ function Library({ books }) {
                         return (
                             <div key={index} className="book">
                                 <h3 className="book-title">{ book.title }</h3>
-                                {/* Give covers a specific size */}
                                 <p className="book-author">{ book.author }</p>
                                 <img className="book-cover" src={ book.cover_url } alt="Book cover" />
                                 <p className="book-isbn">ISBN: { book.isbn }</p>

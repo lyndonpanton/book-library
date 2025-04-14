@@ -11,35 +11,59 @@ function Footer() {
             <section id="footer-main-links">
                 <ul className="footer-main-link-list">
                     <li className="footer-main-link footer-main-link-heading">Developer Information</li>
-                    <li className="footer-main-link">About Me</li>
-                    <li className="footer-main-link">Website</li>
-                    <li className="footer-main-link">GitHub</li>
-                    <li className="footer-main-link">LinkedIn</li>
+                    <li className="footer-main-link">
+                        <a href="" target="_blank">About Me</a>
+                    </li>
+                    <li className="footer-main-link">
+                        <a href="" target="_blank">Website</a>
+                    </li>
+                    <li className="footer-main-link">
+                        <a href="" target="_blank">GitHub</a>
+                    </li>
+                    <li className="footer-main-link">
+                        <a href="https://www.linkedin.com/in/lyndonpanton/" target="_blank">LinkedIn</a>
+                    </li>
                 </ul>
                 <ul className="footer-main-link-list">
                     <li className="footer-main-link footer-main-link-heading">Languages and Frameworks</li>
-                    <li className="footer-main-link">JavaScript</li>
-                    <li className="footer-main-link">ReactJS</li>
-                    <li className="footer-main-link">CSS</li>
-                    <li className="footer-main-link">NodeJS</li>
-                    <li className="footer-main-link">MySQL</li>
+                    <li className="footer-main-link">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>
+                    </li>
+                    <li className="footer-main-link">
+                        <a href="https://react.dev/" target="_blank">ReactJS</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://nodejs.org/" target="_blank">NodeJS</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://www.mysql.com/" target="_blank">MySQL</a></li>
                 </ul>
                 <ul className="footer-main-link-list">
-                    <li className="footer-main-link footer-main-link-heading">Packages and Libraries</li>
-                    <li className="footer-main-link">axios</li>
-                    <li className="footer-main-link">body-parser</li>
-                    <li className="footer-main-link">cors</li>
-                    <li className="footer-main-link">dotenv</li>
-                    <li className="footer-main-link">Fontawesome</li>
-                    <li className="footer-main-link">express</li>
-                    <li className="footer-main-link">mysql2</li>
+                    <li className="footer-main-link footer-main-link-heading">Managers, Packages and Libraries</li>
+                    <li className="footer-main-link">
+                        <a href="https://www.npmjs.com/" target="_blank">NPM</a>
+                    </li>
+                    <li className="footer-main-link">
+                        <a href="https://axios-http.com" target="_blank">axios</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://www.npmjs.com/package/body-parser" target="_blank">body-parser</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://www.npmjs.com/package/cors" target="_blank">cors</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://www.npmjs.com/package/dotenv" target="_blank">dotenv</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://fontawesome.com/" target="_blank">Fontawesome</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://expressjs.com/" target="_blank">express</a></li>
+                    <li className="footer-main-link">
+                        <a href="https://www.npmjs.com/package/mysql2" target="_blank">mysql2</a></li>
                 </ul>
                 <ul className="footer-main-link-list">
-                    <li className="footer-main-link footer-main-link-heading">More Projects</li>
-                    <li className="footer-main-link">Film Library</li>
-                    <li className="footer-main-link">???</li>
-                    <li className="footer-main-link">???</li>
-                    <li className="footer-main-link">???</li>
+                    <li className="footer-main-link footer-main-link-heading">Other Projects</li>
+                    <li className="footer-main-link"><a href="">Film Library</a></li>
+                    <li className="footer-main-link"><a href="">???</a></li>
+                    <li className="footer-main-link"><a href="">???</a></li>
+                    <li className="footer-main-link"><a href="">???</a></li>
                 </ul>
             </section>
             <section id="footer-sub-links">

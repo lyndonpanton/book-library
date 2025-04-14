@@ -22,6 +22,11 @@ footer {
     text-decoration: underline;
 }
 
+.footer-main-link > a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .footer-main-link-heading {
     margin-bottom: 30px;
 
