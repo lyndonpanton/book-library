@@ -30,8 +30,22 @@ function Form({ setBooks }) {
             // Strip whitespace from back and end of input
             case "isbn":
                 if (!isNaN(newISBN) && newISBN.length == 13) {
-                    
+                    axios.get("https://openlibrary.org/search.json?isbn=" + newISBN).then(function (response) {
+                        if (response.data.docs.length == 0) {
+                            // No results
+                        } else if (response.data.docs.length == 1) {
+                            // One result
+                            console.log(
+                                response.data.docs[0].author_name[0]
+                                + ": "
+                                + response.data.docs[0].title
+                            );
+                        } else {
+                            // Multiple results
+                        }
+                    });
                 }
+
                 break;
             case "title":
                 break;
@@ -41,7 +55,11 @@ function Form({ setBooks }) {
                 break;
         }
         
-        // Confirm if the form of the relevant input field is valid
+        // If successful
+        setNewISBN("");
+        setNewTitle("");
+        setNewAuthor("");
+        setNewReleaseYear("");
     }
 
     function updateCurrentRestriction(e) {
