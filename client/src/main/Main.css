@@ -1,6 +1,11 @@
 main {
     display: flex;
     flex-direction: row;
+
+    /* padding-top: 200px; */
+    padding-bottom: 200px;
+
+    background-color: #FAFAFA;
 }
 
 #book-form {
