@@ -62,6 +62,17 @@ footer {
     text-decoration: none;
 }
 
+.footer-sub-icon {
+    margin-left: 30px;
+
+    color: #999999;
+    font-size: 1.5em;
+}
+
+.footer-sub-icon:hover {
+    color: black;
+}
+
 #footer-copyright {
     text-align: center;
 }

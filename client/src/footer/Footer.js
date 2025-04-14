@@ -1,5 +1,8 @@
 import './Footer.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+
 function Footer() {
     const currentYear = new Date().getFullYear();
     return (
@@ -46,9 +49,9 @@ function Footer() {
                     <span className="footer-sub-link">Cookies</span>
                 </section>
                 <section>
-                    <span className="footer-sub-link">Twitter: <i className="fa-brands fa-twitter"></i></span>
-                    <span className="footer-sub-link">Facebook: <i className="fa-brands fa-facebook"></i></span>
-                    <span className="footer-sub-link">Instagram: <i className="fa-brands fa-instagram"></i></span>
+                    <span className="footer-sub-link"><FontAwesomeIcon className="footer-sub-icon" icon={ faTwitter } /></span>
+                    <span className="footer-sub-link"><FontAwesomeIcon className="footer-sub-icon" icon={ faFacebook } /></span>
+                    <span className="footer-sub-link"><FontAwesomeIcon className="footer-sub-icon" icon={ faInstagram } /></span>
                 </section>
             </section>
             <p id="footer-copyright">
