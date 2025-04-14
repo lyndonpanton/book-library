@@ -118,6 +118,7 @@ function Form({ setBooks }) {
 
     return (
         <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
+            {/* Search by: ISBN, */}
             <label htmlFor="form-isbn">ISBN</label>
             <input type="text"
                     name="form-isbn"
@@ -159,6 +160,16 @@ function Form({ setBooks }) {
                     id="form-total-pages"
                     value={ newTotalPages }
                     onChange={ (e) => setNewTotalPages(e.target.value) } />
+
+            {/* Type and placeholder depends on option choosen */}
+            <input type="text" placeholder="..." />
+
+            <select>
+                <option>ISBN</option>
+                <option>Title</option>
+                <option>Author</option>
+                <option>Release Year</option>
+            </select>
 
             <input type="submit" value="Add book" />
         </form>

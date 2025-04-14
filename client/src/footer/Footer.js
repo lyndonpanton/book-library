@@ -7,7 +7,6 @@ function Footer() {
     const currentYear = new Date().getFullYear();
     return (
         <footer>
-            {/* General, Tech Stack, Applications */}
             <section id="footer-main-links">
                 <ul className="footer-main-link-list">
                     <li className="footer-main-link footer-main-link-heading">Developer Information</li>
