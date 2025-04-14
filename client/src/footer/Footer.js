@@ -1,4 +1,4 @@
-
+import './Footer.css'
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -7,14 +7,14 @@ function Footer() {
             {/* General, Tech Stack, Applications */}
             <section id="footer-main-links">
                 <ul className="footer-main-link-list">
-                    {/* Developer */}
+                    <li className="footer-main-link footer-main-link-heading">Developer Information</li>
                     <li className="footer-main-link">About Me</li>
                     <li className="footer-main-link">Website</li>
                     <li className="footer-main-link">GitHub</li>
                     <li className="footer-main-link">LinkedIn</li>
                 </ul>
                 <ul className="footer-main-link-list">
-                    {/* Languages and frameworks */}
+                    <li className="footer-main-link footer-main-link-heading">Languages and Frameworks</li>
                     <li className="footer-main-link">JavaScript</li>
                     <li className="footer-main-link">ReactJS</li>
                     <li className="footer-main-link">CSS</li>
@@ -22,7 +22,7 @@ function Footer() {
                     <li className="footer-main-link">MySQL</li>
                 </ul>
                 <ul className="footer-main-link-list">
-                    {/* Packages and Libraries */}
+                    <li className="footer-main-link footer-main-link-heading">Packages and Libraries</li>
                     <li className="footer-main-link">axios</li>
                     <li className="footer-main-link">body-parser</li>
                     <li className="footer-main-link">cors</li>
@@ -32,7 +32,7 @@ function Footer() {
                     <li className="footer-main-link">mysql2</li>
                 </ul>
                 <ul className="footer-main-link-list">
-                    {/* More Projects */}
+                    <li className="footer-main-link footer-main-link-heading">More Projects</li>
                     <li className="footer-main-link">Film Library</li>
                     <li className="footer-main-link">???</li>
                     <li className="footer-main-link">???</li>
