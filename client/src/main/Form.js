@@ -7,16 +7,15 @@ function Form({ setBooks }) {
     const [newISBN, setNewISBN] = useState("");
     const [newTitle, setNewTitle] = useState("");
     const [newAuthor, setNewAuthor] = useState("");
-    const [newReleaseYear, setNewReleaseYear] = useState("");
     // const [newCoverURL, setNewCoverURL] = useState("");
     // const [newTotalPages, setNewTotalPages] = useState("");
     const [currentRestriction, setCurrentRestrction] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:3001/api/select").then(function (response) {
-            console.log(response.data);
-            setBooks(response.data);
-        });
+        // axios.get("http://localhost:3001/api/select").then(function (response) {
+        //     console.log(response.data);
+        //     setBooks(response.data);
+        // });
 
         setCurrentRestrction("isbn");
     }, [setBooks]);
@@ -35,11 +34,7 @@ function Form({ setBooks }) {
                             // No results
                         } else if (response.data.docs.length == 1) {
                             // One result
-                            console.log(
-                                response.data.docs[0].author_name[0]
-                                + ": "
-                                + response.data.docs[0].title
-                            );
+                            console.log(response.data.docs[0]);
                         } else {
                             // Multiple results
                         }
@@ -48,18 +43,44 @@ function Form({ setBooks }) {
 
                 break;
             case "title":
+                if (newTitle.length > 0) {
+                    axios.get("https://openlibrary.org/search.json?title=" + newTitle).then(function (response) {
+                        if (response.data.docs.length == 0) {
+                            // No results
+                        } else if (response.data.docs.length == 1) {
+                            // One result
+                            console.log(response.data.docs[0].author_name[0]);
+                        } else {
+                            // Multiple results
+                            console.log(response.data.docs[0].author_name[0]);
+                        }
+                    });
+                }
+
                 break;
             case "author":
-                break;
-            case "release-year":
+                if (newAuthor.length > 2) {
+                    axios.get("https://openlibrary.org/search.json?author=" + newAuthor).then(function (response) {
+                        if (response.data.docs.length == 0) {
+                            // No results
+                        } else if (response.data.docs.length == 1) {
+                            // One result
+                            console.log(response.data.docs[0].title);
+                        } else {
+                            // Multiple results
+                            console.log(response.data.docs[0].title);
+                        }
+                    });
+                }
+
                 break;
         }
         
         // If successful
-        setNewISBN("");
-        setNewTitle("");
-        setNewAuthor("");
-        setNewReleaseYear("");
+        // setNewISBN("");
+        // setNewTitle("");
+        // setNewAuthor("");
+        // setNewReleaseYear("");
     }
 
     function updateCurrentRestriction(e) {
@@ -72,9 +93,6 @@ function Form({ setBooks }) {
                 break;
             case "author":
                 setCurrentRestrction("author");
-                break;
-            case "release-year":
-                setCurrentRestrction("release-year");
                 break;
         }
     }
@@ -90,9 +108,6 @@ function Form({ setBooks }) {
             case "author":
                 setNewAuthor(e.target.value);
                 break;
-            case "release-year":
-                setNewReleaseYear(e.target.value);
-                break;
         }
     }
 
@@ -105,7 +120,6 @@ function Form({ setBooks }) {
                 <option value="isbn">ISBN</option>
                 <option value="title">Title</option>
                 <option value="author">Author</option>
-                <option value="release-year">Release Year</option>
             </select>
 
             <input type="submit" value="Search for Book" />
