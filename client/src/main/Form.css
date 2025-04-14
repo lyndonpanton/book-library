@@ -1,11 +1,25 @@
+#form {
+    width: 35%;
+
+    text-align: center;
+}
+
+#form > h2 {
+    display: block;
+    text-align: center;
+}
+
 #book-form {
     margin: 0 auto;
 }
 
-#book-form > label {
-    display: block;
+#book-form > fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-    font-size: 2em;
+    border: none;
+    margin: 0 auto;
 }
 
 #book-form > input[type="text"] {

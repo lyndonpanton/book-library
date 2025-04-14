@@ -9,7 +9,7 @@ function Form({ setBooks }) {
     const [newAuthor, setNewAuthor] = useState("");
     // const [newCoverURL, setNewCoverURL] = useState("");
     // const [newTotalPages, setNewTotalPages] = useState("");
-    const [currentRestriction, setCurrentRestrction] = useState("");
+    const [currentRestriction, setCurrentRestriction] = useState("");
 
     useEffect(() => {
         // axios.get("http://localhost:3001/api/select").then(function (response) {
@@ -17,7 +17,7 @@ function Form({ setBooks }) {
         //     setBooks(response.data);
         // });
 
-        setCurrentRestrction("isbn");
+        setCurrentRestriction("isbn");
     }, [setBooks]);
 
     function submitNewBook(e) {
@@ -28,11 +28,11 @@ function Form({ setBooks }) {
         switch (currentRestriction) {
             // Strip whitespace from back and end of input
             case "isbn":
-                if (!isNaN(newISBN) && newISBN.length == 13) {
+                if (!isNaN(newISBN) && newISBN.length === 13) {
                     axios.get("https://openlibrary.org/search.json?isbn=" + newISBN).then(function (response) {
-                        if (response.data.docs.length == 0) {
+                        if (response.data.docs.length === 0) {
                             // No results
-                        } else if (response.data.docs.length == 1) {
+                        } else if (response.data.docs.length === 1) {
                             // One result
                             console.log(response.data.docs[0]);
                         } else {
@@ -45,9 +45,9 @@ function Form({ setBooks }) {
             case "title":
                 if (newTitle.length > 0) {
                     axios.get("https://openlibrary.org/search.json?title=" + newTitle).then(function (response) {
-                        if (response.data.docs.length == 0) {
+                        if (response.data.docs.length === 0) {
                             // No results
-                        } else if (response.data.docs.length == 1) {
+                        } else if (response.data.docs.length === 1) {
                             // One result
                             console.log(response.data.docs[0].author_name[0]);
                         } else {
@@ -61,9 +61,9 @@ function Form({ setBooks }) {
             case "author":
                 if (newAuthor.length > 2) {
                     axios.get("https://openlibrary.org/search.json?author=" + newAuthor).then(function (response) {
-                        if (response.data.docs.length == 0) {
+                        if (response.data.docs.length === 0) {
                             // No results
-                        } else if (response.data.docs.length == 1) {
+                        } else if (response.data.docs.length === 1) {
                             // One result
                             console.log(response.data.docs[0].title);
                         } else {
@@ -73,6 +73,9 @@ function Form({ setBooks }) {
                     });
                 }
 
+                break;
+            default:
+                console.log("Invalid restriction used");
                 break;
         }
         
@@ -86,13 +89,16 @@ function Form({ setBooks }) {
     function updateCurrentRestriction(e) {
         switch (e.target.value) {
             case "isbn":
-                setCurrentRestrction("isbn");
+                setCurrentRestriction("isbn");
                 break;
             case "title":
-                setCurrentRestrction("title");
+                setCurrentRestriction("title");
                 break;
             case "author":
-                setCurrentRestrction("author");
+                setCurrentRestriction("author");
+                break;
+            default:
+                console.log("Invalid restriction used");
                 break;
         }
     }
@@ -108,28 +114,37 @@ function Form({ setBooks }) {
             case "author":
                 setNewAuthor(e.target.value);
                 break;
+            default:
+                console.log("State not found");
+                break;
         }
     }
 
     return (
-        <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
-            {/* Type and placeholder depends on option choosen */}
-            <input type="text" placeholder="..." onChange={ (e) => updateCurrentState(e) }/>
+        <section id="form">
+            <h2>Find Books</h2>
 
-            <select onChange={ (e) => updateCurrentRestriction(e) }>
-                <option value="isbn">ISBN</option>
-                <option value="title">Title</option>
-                <option value="author">Author</option>
-            </select>
+            <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
+                {/* Type and placeholder depends on option choosen */}
+                <fieldset>
+                <input type="text" placeholder="..." onChange={ (e) => updateCurrentState(e) }/>
 
-            <input type="submit" value="Search for Book" />
+                <select onChange={ (e) => updateCurrentRestriction(e) }>
+                    <option value="isbn">ISBN</option>
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                </select>
+                </fieldset>
 
-            {
-                /* Users should be able to search for a book, see all options if
-                there is one or more results, and then add the book they want
-                to their library */
-            }
-        </form>
+                <input type="submit" value="Search for Book" />
+
+                {
+                    /* Users should be able to search for a book, see all options if
+                    there is one or more results, and then add the book they want
+                    to their library */
+                }
+            </form>
+        </section>
     );
 }
 

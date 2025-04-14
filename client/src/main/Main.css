@@ -2,13 +2,14 @@ main {
     display: flex;
     flex-direction: row;
 
-    /* padding-top: 200px; */
+    min-height: 400px;
+    padding-top: 30px;
     padding-bottom: 200px;
 
     background-color: #FAFAFA;
 }
 
-#book-form {
+#form {
     width: 35%;
 }
 
