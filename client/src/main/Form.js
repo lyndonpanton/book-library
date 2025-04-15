@@ -23,7 +23,7 @@ function Form({ setBooks }) {
         setCurrentRestriction("isbn");
     }, [setBooks]);
 
-    function submitNewBook(e) {
+    function displaySearchResults(e) {
         e.preventDefault();
 
         // Check which restriction is currently being used
@@ -33,13 +33,17 @@ function Form({ setBooks }) {
             case "isbn":
                 if (!isNaN(newISBN) && newISBN.length === 13) {
                     axios.get("https://openlibrary.org/search.json?isbn=" + newISBN).then(function (response) {
+                        console.log(response);
                         if (response.data.docs.length === 0) {
                             // No results
                         } else if (response.data.docs.length === 1) {
                             // One result
-                            console.log(response.data.docs[0]);
+                            console.log(response.data.docs[0].author_name + ": " + response.data.docs[0].title);
                         } else {
                             // Multiple results
+                            for (let i = 0; i < 10; i++) {
+                                console.log(response.data.docs[i].author_name + ": " + response.data.docs[i].title);
+                            }
                         }
                     });
                 }
@@ -55,7 +59,9 @@ function Form({ setBooks }) {
                             console.log(response.data.docs[0].author_name[0]);
                         } else {
                             // Multiple results
-                            console.log(response.data.docs[0].author_name[0]);
+                            for (let i = 0; i < 10; i++) {
+                                console.log(response.data.docs[i].author_name[0]);
+                            }
                         }
                     });
                 }
@@ -71,7 +77,9 @@ function Form({ setBooks }) {
                             console.log(response.data.docs[0].title);
                         } else {
                             // Multiple results
-                            console.log(response.data.docs[0].title);
+                            for (let i = 0; i < 10; i++) {
+                                console.log(response.data.docs[i].title);
+                            }
                         }
                     });
                 }
@@ -86,19 +94,21 @@ function Form({ setBooks }) {
         // setNewISBN("");
         // setNewTitle("");
         // setNewAuthor("");
-        // setNewReleaseYear("");
     }
 
     function updateCurrentRestriction(e) {
         switch (e.target.value) {
             case "isbn":
                 setCurrentRestriction("isbn");
+                setNewISBN(e.target.value);
                 break;
             case "title":
                 setCurrentRestriction("title");
+                setNewTitle(e.target.value);
                 break;
             case "author":
                 setCurrentRestriction("author");
+                setNewAuthor(e.target.value);
                 break;
             default:
                 console.log("Invalid restriction used");
@@ -127,7 +137,7 @@ function Form({ setBooks }) {
         <section id="form">
             <h2>Find Books</h2>
 
-            <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
+            <form id="book-form" onSubmit={ (e) => displaySearchResults(e) }>
                 {/* Type and placeholder depends on option choosen */}
                 <fieldset>
                     <input id="book-form-search" type="text" placeholder="Search books" onChange={ (e) => updateCurrentState(e) }/>

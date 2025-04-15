@@ -44,6 +44,7 @@
 #book-form-restriction {
     margin: 20px 0;
     border: 1px solid #4682b4;
+    border: 2px solid black;
     border-radius: 4px;
     padding-left: 10px;
     width: 200px;
@@ -53,11 +54,6 @@
 
     font-size: 1.2em;
     color: white;
-}
-
-option:hover {
-    color: red;
-    box-shadow: 0 0 10px 100px #1882A8 inset;
 }
 
 #book-form > input[type="submit"] {
@@ -80,8 +76,12 @@ option:hover {
 }
 
 #search-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
     margin: 40px auto 10px;
     border: 1px solid black;
+    border-radius: 4px;
     width: 450px;
     height: 500px;
 
