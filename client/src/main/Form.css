@@ -78,3 +78,12 @@ option:hover {
 #book-form > input[type="submit"]:active {
     background-color: darkcyan;
 }
+
+#search-results {
+    margin: 40px auto 10px;
+    border: 1px solid black;
+    width: 450px;
+    height: 500px;
+
+    overflow-y: scroll;
+}

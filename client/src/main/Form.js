@@ -148,6 +148,10 @@ function Form({ setBooks }) {
                     to their library */
                 }
             </form>
+
+            <section id="search-results">
+                {/* Render x results in this section */}
+            </section>
         </section>
     );
 }
