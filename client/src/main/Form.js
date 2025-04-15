@@ -130,10 +130,10 @@ function Form({ setBooks }) {
             <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
                 {/* Type and placeholder depends on option choosen */}
                 <fieldset>
-                    <input type="text" placeholder="..." onChange={ (e) => updateCurrentState(e) }/>
-                    <FontAwesomeIcon className="form-search-icon" icon={ faSearch } />
+                    <input id="book-form-search" type="text" placeholder="Search books" onChange={ (e) => updateCurrentState(e) }/>
+                    <FontAwesomeIcon id="book-form-search-icon" icon={ faSearch } />
 
-                    <select onChange={ (e) => updateCurrentRestriction(e) }>
+                    <select id="book-form-restriction" onChange={ (e) => updateCurrentRestriction(e) }>
                         <option value="isbn">ISBN</option>
                         <option value="title">Title</option>
                         <option value="author">Author</option>
