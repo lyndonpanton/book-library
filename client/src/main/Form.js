@@ -1,7 +1,10 @@
 import "./Form.css"
-import axios from "axios";
 
+import axios from "axios";
 import { useState, useEffect } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 function Form({ setBooks }) {
     const [newISBN, setNewISBN] = useState("");
@@ -127,13 +130,14 @@ function Form({ setBooks }) {
             <form id="book-form" onSubmit={ (e) => submitNewBook(e) }>
                 {/* Type and placeholder depends on option choosen */}
                 <fieldset>
-                <input type="text" placeholder="..." onChange={ (e) => updateCurrentState(e) }/>
+                    <input type="text" placeholder="..." onChange={ (e) => updateCurrentState(e) }/>
+                    <FontAwesomeIcon className="form-search-icon" icon={ faSearch } />
 
-                <select onChange={ (e) => updateCurrentRestriction(e) }>
-                    <option value="isbn">ISBN</option>
-                    <option value="title">Title</option>
-                    <option value="author">Author</option>
-                </select>
+                    <select onChange={ (e) => updateCurrentRestriction(e) }>
+                        <option value="isbn">ISBN</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                    </select>
                 </fieldset>
 
                 <input type="submit" value="Search for Book" />

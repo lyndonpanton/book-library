@@ -30,6 +30,13 @@
     font-size: 1.5em;
 }
 
+.form-search-icon {
+    position: relative;
+    top: 3px;
+    right: 20px;
+    /* margin-right: 30px; */
+}
+
 #book-form > input[type="submit"] {
     display: block;
     margin: 10px auto;
